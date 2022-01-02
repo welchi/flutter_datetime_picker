@@ -43,6 +43,7 @@ const String m = 'm';
 /// Example:
 ///     formatDate(new DateTime(1989, 2), [MM]);
 ///     // => february
+// ignore: constant_identifier_names
 const String MM = 'MM';
 
 /// Outputs month as short name
@@ -84,6 +85,7 @@ const String w = 'w';
 ///     // => 53
 ///     formatDate(new DateTime(1989, 2, 21), [W]);
 ///     // => 08
+// ignore: constant_identifier_names
 const String WW = 'WW';
 
 /// Outputs week in year compactly
@@ -119,6 +121,7 @@ const String h = 'h';
 /// Example:
 ///     formatDate(new DateTime(1989, 02, 1, 15), [HH]);
 ///     // => 15
+// ignore: constant_identifier_names
 const String HH = 'HH';
 
 /// Outputs hour (0 to 23) compactly
@@ -169,6 +172,7 @@ const String s = 's';
 ///     // => 099
 ///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 0), [SS]);
 ///     // => 009
+// ignore: constant_identifier_names
 const String SSS = 'SSS';
 
 /// Outputs millisecond compactly
@@ -271,7 +275,7 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
     }
   }
 
-  final sb = new StringBuffer();
+  final sb = StringBuffer();
 
   for (String format in formats) {
     if (format == yyyy) {
@@ -363,4 +367,4 @@ String digits(int value, int length) {
 }
 
 int dayInYear(DateTime date) =>
-    date.difference(new DateTime(date.year, 1, 1)).inDays;
+    date.difference(DateTime(date.year, 1, 1)).inDays;
